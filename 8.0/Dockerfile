@@ -16,6 +16,10 @@ RUN apt-get update \
         && dpkg --force-depends -i wkhtmltox.deb \
         && apt-get -y install -f \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
+        
+RUN pip install azure
+RUN pip install unidecode
+RUN pip install ofxparse
 
 # Grab gosu for easy step-down from root
 RUN gpg --keyserver pgp.mit.edu --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
@@ -42,7 +46,9 @@ RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 0xdef2a2198183cbb5 \
 COPY ./run.sh /
 COPY ./openerp-server.conf /etc/odoo/
 
+exec gosu odoo mkdir /opt/odoo/additional_addons
+
 # Mount /var/lib/odoo to allow restoring filestore
-VOLUME ["/var/lib/odoo"]
+VOLUME ["/var/lib/odoo", "/opt/odoo/additional_addons"]
 
 CMD ["/run.sh"]
