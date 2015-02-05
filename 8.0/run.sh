@@ -19,7 +19,7 @@ set_config "db_host" $DB_PORT_5432_TCP_ADDR
 set_config "db_port" $DB_PORT_5432_TCP_PORT
 set_config "db_user" $DB_ENV_POSTGRES_USER
 set_config "db_password" $DB_ENV_POSTGRES_PASSWORD
-set_config "addons_path" ADDONS_PATH
+set_config "addons_path" $ADDONS_PATH
 
 # start Odoo
 exec gosu odoo /usr/bin/openerp-server --config $CONFIG_FILE
