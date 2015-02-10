@@ -9,6 +9,7 @@ RUN apt-get update \
             curl \
             npm \
             python-support \
+            python-pip \
         && npm install -g less less-plugin-clean-css \
         && ln -s /usr/bin/nodejs /usr/bin/node \
         && curl -o wkhtmltox.deb -SL http://nightly.odoo.com/extra/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb \
