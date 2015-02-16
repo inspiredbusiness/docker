@@ -31,7 +31,7 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
         && chmod +x /usr/local/bin/gosu
 
 # Install Odoo
-ENV ODOO_VERSION 8.0
+ENV ODOO_VERSION 7.0
 ENV ODOO_RELEASE 20150215
 RUN curl -o odoo.deb -SL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
         && dpkg --force-depends -i odoo.deb \
