@@ -51,6 +51,7 @@ COPY ./openerp-server.conf /etc/odoo/
 exec gosu odoo mkdir /opt/odoo/additional_addons
 
 # Mount /var/lib/odoo to allow restoring filestore
-VOLUME ["/var/lib/odoo", "/opt/odoo/additional_addons"]
+#"/var/lib/odoo", 
+VOLUME ["/opt/odoo/additional_addons"]
 
 CMD ["/run.sh"]
