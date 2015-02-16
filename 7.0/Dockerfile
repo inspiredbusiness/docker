@@ -54,4 +54,6 @@ exec gosu openerp mkdir /opt/openerp/additional_addons
 #"/var/lib/odoo", 
 VOLUME ["/opt/openerp/additional_addons"]
 
+EXPOSE 8069 8072
+
 CMD ["/run.sh"]
