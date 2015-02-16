@@ -46,12 +46,12 @@ RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 0xdef2a2198183cbb5 \
 
 # Run script and Odoo configuration file
 COPY ./run.sh /
-COPY ./openerp-server.conf /etc/odoo/
+COPY ./openerp-server.conf /etc/openerp/
 
-exec gosu odoo mkdir /opt/odoo/additional_addons
+exec gosu openerp mkdir /opt/openerp/additional_addons
 
 # Mount /var/lib/odoo to allow restoring filestore
 #"/var/lib/odoo", 
-VOLUME ["/opt/odoo/additional_addons"]
+VOLUME ["/opt/openerp/additional_addons"]
 
 CMD ["/run.sh"]
