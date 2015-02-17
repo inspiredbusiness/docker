@@ -53,4 +53,6 @@ exec gosu odoo mkdir /opt/odoo/additional_addons
 # Mount /var/lib/odoo to allow restoring filestore
 VOLUME ["/var/lib/odoo", "/opt/odoo/additional_addons"]
 
+EXPOSE 8069 8072
+
 CMD ["/run.sh"]
