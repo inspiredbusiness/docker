@@ -16,10 +16,10 @@ RUN apt-get update \
         && echo 'c81fffae4c0914f95fb12e047a72edda5042b1c6 wkhtmltox.deb' | sha1sum -c - \
         && dpkg --force-depends -i wkhtmltox.deb \
         && apt-get -y install -f \
-        && rm -rf /var/lib/apt/lists/* wkhtmltox.deb \
-        && debconf-set-selections <<< "postfix postfix/mailname string localhost" \
-        && debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'" \
-        && apt-get install -y postfix
+        && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
+RUN debconf-set-selections <<< "postfix postfix/mailname string localhost"
+RUN debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+RUN apt-get install -y postfix
         
 RUN pip install azure
 RUN pip install unidecode
