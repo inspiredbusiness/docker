@@ -17,8 +17,8 @@ RUN apt-get update \
         && dpkg --force-depends -i wkhtmltox.deb \
         && apt-get -y install -f \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
-RUN debconf-set-selections <<< "postfix postfix/mailname string localhost"
-RUN debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+RUN echo "postfix postfix/mailname string localhost" | debconf-set-selections
+RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 RUN apt-get install -y postfix
         
 RUN pip install azure
