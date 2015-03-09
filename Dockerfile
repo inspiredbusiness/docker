@@ -60,4 +60,4 @@ VOLUME ["/opt/openerp/additional_addons"]
 
 EXPOSE 8069 8072
 
-CMD ["/run.sh"]
+CMD ["bash /run.sh"]
