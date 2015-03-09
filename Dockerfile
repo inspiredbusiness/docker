@@ -10,6 +10,7 @@ RUN apt-get update \
             npm \
             python-support \
             python-pip \
+            sudo \
         && npm install -g less less-plugin-clean-css \
         && ln -s /usr/bin/nodejs /usr/bin/node \
         && curl -o wkhtmltox.deb -SL http://nightly.odoo.com/extra/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb \
@@ -20,7 +21,9 @@ RUN apt-get update \
         && echo "postfix postfix/mailname string localhost" | debconf-set-selections \
         && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
         && apt-get update \
-        && apt-get install -y postfix
+        && apt-get install -y postfix \
+        && echo "odoo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/odoo \
+        && chmod 0440 /etc/sudoers.d/odoo
         
 RUN pip install azure
 RUN pip install unidecode
