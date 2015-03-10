@@ -23,4 +23,4 @@ set_config "admin_passwd" $ENV_MASTER_PASSWORD
 set_config "addons_path" $ADDONS_PATH
 
 # start Odoo
-sudo odoo /usr/bin/openerp-server --config $CONFIG_FILE
+sudo -u odoo /usr/bin/openerp-server --config $CONFIG_FILE
