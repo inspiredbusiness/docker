@@ -3,6 +3,7 @@ MAINTAINER Odoo S.A. <info@odoo.com>
 
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN apt-get -o Acquire::Check-Valid-Until=false update \
+        && apt-get update \
 	&& apt-get install -y \
             adduser \
             ca-certificates \
