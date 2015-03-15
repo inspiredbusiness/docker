@@ -63,4 +63,4 @@ VOLUME ["/var/lib/odoo", "/opt/odoo/additional_addons"]
 
 EXPOSE 8069 8072
 
-CMD bash /run.sh
+CMD /run.sh
