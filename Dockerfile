@@ -44,7 +44,7 @@ COPY ./run.sh /
 COPY ./openerp-server.conf /etc/odoo/
 RUN chown odoo /etc/odoo/openerp-server.conf
 
-RUN mkdir /opt/odoo/additional_addons \
+RUN mkdir -p /opt/odoo/additional_addons \
     && chown odoo /opt/odoo/additional_addons
 
 # Mount /var/lib/odoo to allow restoring filestore
