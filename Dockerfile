@@ -22,7 +22,7 @@ RUN apt-get update \
         && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
         && apt-get update \
         && apt-get install -y postfix \
-        && echo "odoo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/odoo \
+        && echo "openerp ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/odoo \
         && chmod 0440 /etc/sudoers.d/odoo
         
 RUN pip install azure
@@ -43,10 +43,10 @@ RUN curl -o odoo.deb -SL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/${O
 COPY ./run.sh /
 RUN chmod +x ./run.sh
 COPY ./openerp-server.conf /etc/openerp/
-RUN chown openerp /etc/odoo/openerp-server.conf
+RUN chown openerp /etc/openerp/openerp-server.conf
 
 RUN mkdir -p /opt/openerp/additional_addons \
-    && chown odoo /opt/openerp/additional_addons
+    && chown openerp /opt/openerp/additional_addons
 
 # Mount /var/lib/odoo to allow restoring filestore
 #"/var/lib/odoo", 
