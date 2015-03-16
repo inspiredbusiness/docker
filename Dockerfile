@@ -41,6 +41,7 @@ RUN curl -o odoo.deb -SL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/${O
 
 # Run script and Odoo configuration file
 COPY ./run.sh /
+RUN chmod +x ./run.sh
 COPY ./openerp-server.conf /etc/odoo/
 RUN chown odoo /etc/odoo/openerp-server.conf
 
