@@ -25,6 +25,7 @@ RUN apt-get update \
 RUN pip install azure
 RUN pip install unidecode
 RUN pip install ofxparse
+RUN pip install unirest
 
 # Grab gosu for easy step-down from root
 RUN gpg --keyserver pgp.mit.edu --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
