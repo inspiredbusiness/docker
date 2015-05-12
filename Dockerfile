@@ -28,6 +28,7 @@ RUN apt-get update \
 RUN pip install azure
 RUN pip install unidecode
 RUN pip install ofxparse
+RUN pip install unirest
 
 # Install Odoo
 ENV ODOO_VERSION 7.0
