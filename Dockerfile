@@ -32,7 +32,7 @@ RUN pip install unirest
 
 # Install Odoo
 ENV ODOO_VERSION 8.0
-ENV ODOO_RELEASE 20150517
+ENV ODOO_RELEASE 20150303
 ENV ODOO_FILE_PREFIX odoo_
 RUN curl -o odoo.deb -SL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/${ODOO_FILE_PREFIX}${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
         && dpkg --force-depends -i odoo.deb \
