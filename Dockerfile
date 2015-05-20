@@ -52,7 +52,7 @@ RUN mkdir -p /opt/odoo/additional_addons \
 RUN mkdir -p /var/lib/odoo/filestore \
     && chown odoo /var/lib/odoo/filestore
 
-VOLUME ["/var/lib/odoo", "/opt/odoo/additional_addons"]
+VOLUME ["/var/lib/odoo/filestore", "/opt/odoo/additional_addons"]
 
 EXPOSE 8069 8072
 
