@@ -30,6 +30,13 @@ RUN pip install unidecode
 RUN pip install ofxparse
 RUN pip install unirest
 
+# Install Chef DK
+ENV CHEF_DISTRO debian/6/x86_64
+ENV CHEF_FILE chefdk_0.6.2-1_amd64.deb
+
+RUN curl -o chef.deb -SL https://opscode-omnibus-packages.s3.amazonaws.com/${CHEF_DISTRO}/${CHEF_FILE} \
+        && dpkg -i chef.deb
+
 # Install Odoo
 ENV ODOO_VERSION 8.0
 ENV ODOO_RELEASE 20150524
