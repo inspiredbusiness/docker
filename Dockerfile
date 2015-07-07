@@ -29,6 +29,7 @@ RUN pip install azure
 RUN pip install unidecode
 RUN pip install ofxparse
 RUN pip install unirest
+RUN pip install python-jsonrpc
 
 # Install Chef DK
 ENV CHEF_DISTRO debian/6/x86_64
