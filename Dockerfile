@@ -30,6 +30,7 @@ RUN pip install unidecode
 RUN pip install ofxparse
 RUN pip install unirest
 RUN pip install python-jsonrpc
+RUN pip install flanker
 
 # Install Odoo
 ENV ODOO_VERSION 9.0
