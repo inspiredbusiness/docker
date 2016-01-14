@@ -37,7 +37,7 @@ ENV ODOO_VERSION 9.0
 ENV ODOO_RELEASE alpha1.latest
 ENV ODOO_FILE_PREFIX odoo_
 
-RUN curl -o odoo.deb -SL https://nightly.odoo.com/9.0/nightly/deb/odoo_9.0.latest_all.deb \
+RUN curl -o odoo.deb -SL https://nightly.odoo.com/9.0/nightly/deb/odoo_9.0c.20160114_all.deb \
         && dpkg --force-depends -i odoo.deb \
         && apt-get update \
         && apt-get -y install -f --no-install-recommends \
